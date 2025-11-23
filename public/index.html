@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ScriptsNessAuth - Hospedar arquivos</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 32px auto; padding: 0 16px; }
+    h1 { color: #222; }
+    form { margin-bottom: 20px; }
+    input[type="file"] { display: inline-block; }
+    button { margin-left: 8px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { padding: 8px; border-bottom: 1px solid #eee; text-align: left; }
+    .small { font-size: 0.9em; color: #666; }
+    .actions button { margin-right: 6px; }
+    code { background: #f6f8fa; padding: 2px 6px; border-radius: 4px; }
+    .top-actions { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <h1>ScriptsNessAuth</h1>
+  <div class="top-actions">
+    <span id="welcome"></span>
+    <button id="btnLogout" style="display:none;">Sair</button>
+    <a id="btnLogin" href="/login.html" style="margin-left:8px;">Entrar / Registrar</a>
+  </div>
+
+  <p>Hospede arquivos .lua e .txt e copie rapidamente o loadstring.</p>
+
+  <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data" style="display:none;">
+    <label>Escolha arquivo (.lua / .txt):</label><br />
+    <input type="file" name="file" id="fileInput" required />
+    <button type="submit">Fazer upload</button>
+  </form>
+
+  <h2>Arquivos hospedados</h2>
+  <div id="filesArea">
+    <p class="small">Carregando arquivos...</p>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
